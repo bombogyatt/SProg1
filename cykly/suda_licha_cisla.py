@@ -4,7 +4,7 @@ x = 0
 zbytek = 0
 while x < mez :
     zbytek = x%2
-    if zbytek == 0:
+    if x % 2 == 0:
         print(f"Číslo {x} je sudé")
     else:
         print(f"Číslo {x} je liché")
