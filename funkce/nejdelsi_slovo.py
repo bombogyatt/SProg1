@@ -8,4 +8,4 @@ def nejdelsi_slovo(text):
     return nejdelsi_slovo
 
 
-print(nejdelsi_slovo("ahoj ahoj j hh klklklk kkoko jjkjkjk"))
+print(nejdelsi_slovo("Včera jsme šli na výlet do hor"))  # "výlet"
