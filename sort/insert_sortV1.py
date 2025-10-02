@@ -15,6 +15,8 @@ def insert_sortV1(seznam):
             pocet_porovnani += 1
             if seznam[j] < seznam[j - 1]:
                 seznam[j], seznam[j - 1] = seznam[j - 1], seznam[j]
+            else:
+                break
 
         start += 1
 
