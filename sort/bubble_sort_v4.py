@@ -8,8 +8,6 @@ def bubblesortV4(seznam):
     start = 0
     end = len(seznam) - 1
 
-    print(seznam)
-
     for j in range(pocet_prvku - 1):
         #kontrola serazenosti
         prohozeno = False
@@ -26,7 +24,7 @@ def bubblesortV4(seznam):
 
         prohozeno = False
 
-        for i in range(end, start, 1):
+        for i in range(end, start, -1):
             pocet_porovnani += 1
             if seznam[i] < seznam[i - 1]:
                 seznam[i], seznam[i - 1] = seznam[i - 1], seznam[i]
@@ -35,9 +33,6 @@ def bubblesortV4(seznam):
 
         if not prohozeno:
             break
-
-
-    print(seznam)
 
 
     return pocet_porovnani
