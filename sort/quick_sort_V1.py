@@ -1,27 +1,35 @@
-seznam = [8, 8, 2, 7, 4, 5, 3, 2, 6, 1, 10, 8, 9, 2, 3]
+# vlozit quicksort do mainu
+def partition(left, right, pivot, numbers):
+    count = 0
+    while(left <= right):
 
-def partition(left, right, list):
-    
-    # vybrání pivota
-    pivot_pos = int(len(list)/2)
-    pivot = list[pivot_pos]
-    print(f'pivot je {pivot} na pozici {pivot_pos}')
-
-    i = left
-    j = right
-
-    while i <= j:
-
-        while True:
-            if list[i] > pivot:
-                break
-            else:
-                i += 1
+        while(numbers[left]<pivot):
+            count += 1
+            left += 1
 
 
+        while(pivot<numbers[right]):
+            count += 1
+            right -= 1
 
-        
+        count += 1
+        if(left<=right):           
+            numbers[left], numbers[right] = numbers[right], numbers[left]
+            left += 1
+            right -= 1
 
 
-partition(0, 14, seznam)
+    return left, count
+
+def quicksort(left, right, numbers):
+    step = 0
+    if(left < right):
+        pivot = numbers[(left + right) // 2]
+        mid, partstep = partition(left, right, pivot, numbers)
+        step += partstep
+        step += quicksort(left, mid - 1,numbers)
+        step += quicksort(mid, right ,numbers)
+    return step
+
+
 
