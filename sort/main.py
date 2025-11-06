@@ -11,6 +11,8 @@ from insert_sortV1 import insert_sortV1
 
 from select_sortV1 import select_sortV1
 
+from quick_sort_V1 import quick_sortV1
+
 
 def measure_sorts():
     lists_lens = [n for n in range(10, 50, 10)]
@@ -24,6 +26,8 @@ def measure_sorts():
 
     selectV1_results = []
 
+    quickV1_results = []
+
     for n in range(10, 50, 10):
         unsorted_list = [random.randint(0, n**2) for i in range(n)]
 
@@ -33,6 +37,7 @@ def measure_sorts():
         bubbleV4_results.append(bubblesortV4(copy.deepcopy(unsorted_list)))
         insertV1_results.append(insert_sortV1(copy.deepcopy(unsorted_list)))
         selectV1_results.append(select_sortV1(copy.deepcopy(unsorted_list)))
+        quickV1_results.append(quick_sortV1(copy.deepcopy(unsorted_list)))
 
     plt.plot(lists_lens, bubbleV1_results, label='bubble V1', color = 'blue')
     plt.plot(lists_lens, bubbleV2_results, label='bubble V2', color = 'red')
@@ -40,6 +45,7 @@ def measure_sorts():
     plt.plot(lists_lens, bubbleV4_results, label='bubble V4', color = 'brown')
     plt.plot(lists_lens, selectV1_results, label='selectV1', color = 'black')
     plt.plot(lists_lens, insertV1_results, label='insertV1', color= 'pink')
+    plt.plot(lists_lens, quickV1_results, label='quick V1', color = 'magenta')
 
 
     plt.legend()

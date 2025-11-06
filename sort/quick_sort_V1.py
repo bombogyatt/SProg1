@@ -1,4 +1,3 @@
-# vlozit quicksort do mainu
 def partition(left, right, pivot, numbers):
     count = 0
     while(left <= right):
@@ -31,5 +30,6 @@ def quicksort(left, right, numbers):
         step += quicksort(mid, right ,numbers)
     return step
 
-
-
+def quick_sortV1(numbers):
+    count = quicksort(0, len(numbers) - 1, numbers)
+    return count
