@@ -21,11 +21,7 @@ class Vektor:
         delka = math.sqrt(self.x**2 + self.y**2)
         return delka
     
-    def __mul__(self, jiny):
-        if isinstance(jiny, Vektor):
-
-
-        if isinstance(jiny, (int, float)):
+    
 
 
 v1 = Vektor(3, 4)
