@@ -29,15 +29,5 @@ class Stack:
         
 
 
-zasobnik = Stack()
-print(zasobnik.isEmpty())
-for i in range(5):
-    zasobnik.push(i)
-print(zasobnik.peek())
-print(zasobnik.isEmpty())
-for i in range(5):
-    print(f'mažu {zasobnik.pop()}')
-zasobnik.pop()
-
 
     
